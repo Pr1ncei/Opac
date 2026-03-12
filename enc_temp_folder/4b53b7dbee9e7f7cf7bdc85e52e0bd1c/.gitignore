@@ -1,0 +1,8 @@
+.vcxproj
+.vcxproj.filters
+.vs
+.vcxproj.user
+Debug/
+Release/
+x64/
+*.user

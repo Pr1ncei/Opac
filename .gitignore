@@ -1,4 +1,13 @@
-.vcxproj
-.vcxproj.filters
-.vs
-.vcxproj.user
+# Visual Studio temporary files
+.vs/
+Debug/
+Release/
+x64/
+
+# User-specific settings
+*.vcxproj.user
+
+# Build results
+*.exe
+*.pdb
+*.obj
