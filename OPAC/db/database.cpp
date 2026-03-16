@@ -1,21 +1,29 @@
-#include "database.h"
-#include <iostream>
+#include "Database.h"
+#include <cppconn/exception.h>
+#include <mysql_driver.h>
+#include <mysql_connection.h>
+
+using namespace std;
 
 Database::Database() {
+
     try {
-        sql::mysql::MySQL_Driver* driver = sql::mysql::get_mysql_driver_instance();
-        con = driver->connect("tcp://127.0.0.1:3306", "root", "");
-        con->setSchema("opacdb");
+
+        driver = sql::mysql::get_mysql_driver_instance();
+
+        con = driver->connect(
+            "tcp://127.0.0.1:3306",
+            "root",
+            ""
+        );
+
+        con->setSchema("opac_db");
+
     }
     catch (sql::SQLException& e) {
-        std::cerr << "DB Connection Error: " << e.what() << std::endl;
-        con = nullptr;
-    }
-}
 
-Database::~Database() {
-    if (con) {
-        delete con;
+        cout << "Database connection failed: " << e.what() << endl;
+        con = nullptr;
     }
 }
 

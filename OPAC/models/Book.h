@@ -3,15 +3,21 @@
 
 #include <string>
 
-class Book {
-public:
-    int book_id;
-    std::string title;
-    std::string author;
-    int year;
+using namespace std;
 
-    // Constructor
-    Book(int id, std::string t, std::string a, int y);
+class Book {
+
+public:
+
+    int id;
+    string title;
+    string author;
+    string dewey;
+    bool available;
+    string borrowedBy;
+
+    Book();
+    Book(int i, string t, string a, string d, bool avail, string borrower);
 };
 
 #endif

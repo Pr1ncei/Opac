@@ -1,6 +1,8 @@
-﻿  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 214 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+﻿  System.cpp
+  Generating code
+  8 of 254 functions ( 3.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   DIPROGLANG_OPAC.vcxproj -> C:\Users\Green\source\repos\Opac\x64\Release\DIPROGLANG_OPAC.exe
   C:\Users\Green\Downloads\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll

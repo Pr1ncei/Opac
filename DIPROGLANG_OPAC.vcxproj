@@ -136,14 +136,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="OPAC\models\Book.cpp" />
-    <ClCompile Include="OPAC\db\database.cpp" />
-    <ClCompile Include="OPAC\main.cpp" />
-    <ClCompile Include="OPAC\core\system.cpp" />
+    <ClCompile Include="OPAC\db\Database.cpp" />
+    <ClCompile Include="OPAC\Main.cpp" />
+    <ClCompile Include="OPAC\core\System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OPAC\models\Account.h" />
     <ClInclude Include="OPAC\models\Book.h" />
-    <ClInclude Include="OPAC\db\database.h" />
-    <ClInclude Include="OPAC\core\system.h" />
+    <ClInclude Include="OPAC\db\Database.h" />
+    <ClInclude Include="OPAC\core\System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

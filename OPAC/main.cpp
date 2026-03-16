@@ -1,7 +1,10 @@
-#include "core/system.h"
+#include "core/System.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-    OpacSystem app;
-    app.run();
+    System opac;
+    opac.run();
     return 0;
 }
