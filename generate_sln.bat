@@ -1,12 +1,9 @@
 @echo off
+echo Generating Visual Studio 2026 solution using Premake...
 
-echo Creating Visual Studio solution...
+rem -- generate VS 2026 solution
+premake5 vs2026
 
-REM Create solution
-dotnet new sln -n Opac
-
-REM Add existing project
-dotnet sln Opac.sln add DIPROGLANG_OPAC.vcxproj
-
-echo Done! Open Opac.sln in Visual Studio.
+echo Done!
+echo Open Opac.sln
 pause
