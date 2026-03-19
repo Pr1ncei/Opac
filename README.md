@@ -1,7 +1,7 @@
 # OPAC
 Online Public Access Catalog (OPAC) Project in Partial Fullfillment of Design and Implementation of Programming Languages (DIPROGLANG)
 
-## Dependencies
+## I. Dependencies
 
 Make sure you have the following installed before setting up the project:
 
@@ -12,7 +12,7 @@ Make sure you have the following installed before setting up the project:
 
 ---
 
-##  Notes & Setup Requirements
+##  II. Notes & Setup Requirements
 
 - **Premake 5**
   - Add Premake to your system `PATH` so it can be run from the command line.
@@ -41,17 +41,56 @@ Make sure you have the following installed before setting up the project:
 
 ---
 
-## Database Setup
+## III. Database Setup
+Follow these steps to set up the `opac_db` database for the OPAC system.
 
-1. Start your MySQL server  
-2. Create the database:
+1. Start MySQL Server
 
-   ```sql
-   CREATE DATABASE opac_db;
-4. Run the provided SQL script to initialize tables
-*(Note: SQL script not included yet)*
+2. Navigate to the project root directory, then run the SQL Script by:
+```bash
+mysql -u root -p < src/db/opac_db.sql
+```
+*Enter your MySQL password when prompted.*
 
-## Project Setup
+If using a custom port (e.g., 3307)
+```bash
+mysql -u root -p --port=3307 < src/db/opac_db.sql
+```
+
+3. Verify Database Setup
+Log into MySQL:
+```
+mysql -u root -p
+```
+Then run:
+```
+USE opac_db;
+SHOW TABLES;
+```
+You should see:
+```
+users
+books
+```
+
+### Default Admin Account
+
+Use this account to log in as administrator:
+```
+Username: admin
+Password: admin
+```
+
+### Important Notes
+
+Running the script will delete and recreate the database:
+```
+DROP DATABASE IF EXISTS opac_db;
+```
+Make sure to back up any important data before running it.
+
+---
+## IV. Project Setup
 
 1. Generate the Visual Studio solution:
 
@@ -76,28 +115,12 @@ Make sure you have the following installed before setting up the project:
      - Release
      - x64
 
-5. Build and run the program  
+
+5. Build and run the executable or go to `bin/Release`
 
 ---
 
-## Stay Updated
-
-Before working on the project, make sure to pull the latest changes:
-
-    git pull
-
----
-
-## Running the Program
-
-Once everything is set up:
-
-- Build the solution  
-- Run the executable from Visual Studio or `bin/Release`  
-
----
-
-## Notes
+## V. Notes
 
 - Ensure the `.env` file is in the correct location (same directory as the executable or project root depending on configuration).
 - Do not commit `.env` to version control (add it to `.gitignore`).
