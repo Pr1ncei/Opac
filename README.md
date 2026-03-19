@@ -30,7 +30,7 @@ Make sure you have the following installed before setting up the project:
       - `MariaDB`
       - or any other `MySQL` service that conflicts
 
-- **MySQL Connector**
+- **MySQL Connector (Optional)**
   - Install the latest MySQL Connector/C++
   - Rename the folder to:
  
@@ -77,6 +77,14 @@ Make sure you have the following installed before setting up the project:
      - x64
 
 5. Build and run the program  
+
+---
+
+## Stay Updated
+
+Before working on the project, make sure to pull the latest changes:
+
+    git pull
 
 ---
 
