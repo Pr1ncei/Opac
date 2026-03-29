@@ -1,34 +1,44 @@
-// It's just a utility tool that manually parses each line in an env file 
-#pragma once 
-#include <iostream> 
+#pragma once
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <unordered_map>
 
 inline std::unordered_map<std::string, std::string> loadEnv(
-	const std::string& filename)
+    const std::string& filename)
 {
-	std::unordered_map<std::string, std::string> env; 
-	std::ifstream file(filename); 
-	if (!file.is_open())
-	{
-		std::cerr << "[ENV.HPP] This " << filename << " cannot be open\n";
-		return env; 
-	}
+    std::unordered_map<std::string, std::string> env;
+    std::ifstream file(filename);
 
-	std::string line; 
-	while (std::getline(file, line))
-	{
-		if (line.empty() || line[0] == '#') continue; 
+    if (!file.is_open())
+    {
+        std::cerr << "[ENV.HPP] Cannot open: " << filename << "\n";
+        return env;
+    }
 
-		size_t position = line.find('=');
-		if (position == std::string::npos) continue; 
+    std::string line;
+    while (std::getline(file, line))
+    {
+        if (!line.empty() && line.back() == '\r')
+            line.pop_back();
 
-		std::string key = line.substr(0, position);
-		std::string value = line.substr(position + 1);
+        if (line.empty() || line[0] == '#') continue;
 
-		env[key] = value;
-	}
+        size_t pos = line.find('=');
+        if (pos == std::string::npos) continue;
 
-	return env; 
+        std::string key = line.substr(0, pos);
+        std::string value = line.substr(pos + 1);
+
+        auto trim = [](std::string& s) {
+            s.erase(0, s.find_first_not_of(" \t"));
+            s.erase(s.find_last_not_of(" \t") + 1);
+            };
+        trim(key);
+        trim(value);
+
+        env[key] = value;
+    }
+
+    return env;
 }

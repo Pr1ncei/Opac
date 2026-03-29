@@ -1,0 +1,350 @@
+[2026-03-29 17:34:37] [INFO   ] === OPAC System starting ===
+[2026-03-29 17:34:37] [INFO   ] Audit thread started.
+[2026-03-29 17:34:48] [ERROR  ] [Database] Connection failed: Unable to connect to 127.0.0.1:3306 (code=2003)
+[2026-03-29 17:34:49] [INFO   ] Audit thread stopped.
+[2026-03-29 17:34:49] [INFO   ] === OPAC System stopped ===
+[2026-03-29 17:44:28] [INFO   ] === OPAC System starting ===
+[2026-03-29 17:44:28] [INFO   ] Audit thread started.
+[2026-03-29 17:44:39] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 17:44:39] [INFO   ] Audit thread stopped.
+[2026-03-29 17:44:39] [INFO   ] === OPAC System stopped ===
+[2026-03-29 17:47:22] [INFO   ] === OPAC System starting ===
+[2026-03-29 17:47:22] [INFO   ] Audit thread started.
+[2026-03-29 17:47:34] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 17:47:35] [INFO   ] Audit thread stopped.
+[2026-03-29 17:47:35] [INFO   ] === OPAC System stopped ===
+[2026-03-29 17:48:47] [INFO   ] === OPAC System starting ===
+[2026-03-29 17:48:47] [INFO   ] Audit thread started.
+[2026-03-29 17:48:49] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 17:48:50] [INFO   ] Audit thread stopped.
+[2026-03-29 17:48:50] [INFO   ] === OPAC System stopped ===
+[2026-03-29 17:51:24] [INFO   ] === OPAC System starting ===
+[2026-03-29 17:51:24] [INFO   ] Audit thread started.
+[2026-03-29 17:51:33] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 17:51:34] [INFO   ] Audit thread stopped.
+[2026-03-29 17:51:34] [INFO   ] === OPAC System stopped ===
+[2026-03-29 18:08:42] [INFO   ] === OPAC System starting ===
+[2026-03-29 18:08:42] [INFO   ] Audit thread started.
+[2026-03-29 18:08:44] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 18:08:44] [INFO   ] Audit thread stopped.
+[2026-03-29 18:08:44] [INFO   ] === OPAC System stopped ===
+[2026-03-29 18:13:08] [INFO   ] === OPAC System starting ===
+[2026-03-29 18:13:08] [INFO   ] Audit thread started.
+[2026-03-29 18:13:09] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 18:13:09] [INFO   ] Audit thread stopped.
+[2026-03-29 18:13:09] [INFO   ] === OPAC System stopped ===
+[2026-03-29 18:17:20] [INFO   ] === OPAC System starting ===
+[2026-03-29 18:17:20] [INFO   ] Audit thread started.
+[2026-03-29 18:17:22] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 18:17:23] [INFO   ] Audit thread stopped.
+[2026-03-29 18:17:23] [INFO   ] === OPAC System stopped ===
+[2026-03-29 18:29:44] [INFO   ] === OPAC System starting ===
+[2026-03-29 18:29:44] [INFO   ] Audit thread started.
+[2026-03-29 18:29:45] [ERROR  ] [Database] Connection failed: Authentication plugin 'mysql_native_password' cannot be loaded: The specified module could not be found.
+ (code=2059)
+[2026-03-29 18:29:46] [INFO   ] Audit thread stopped.
+[2026-03-29 18:29:46] [INFO   ] === OPAC System stopped ===
+[2026-03-29 19:17:45] [INFO   ] === OPAC System starting ===
+[2026-03-29 19:17:45] [INFO   ] Audit thread started.
+[2026-03-29 19:17:51] [ERROR  ] [Database] Connection failed: Unable to connect to 127.0.0.1:3307 (code=2003)
+[2026-03-29 19:17:51] [INFO   ] Audit thread stopped.
+[2026-03-29 19:17:51] [INFO   ] === OPAC System stopped ===
+[2026-03-29 19:18:37] [INFO   ] === OPAC System starting ===
+[2026-03-29 19:18:37] [INFO   ] Audit thread started.
+[2026-03-29 19:18:38] [ERROR  ] [Database] Connection failed: Access denied for user 'root'@'localhost' (using password: YES) (code=1045)
+[2026-03-29 19:18:39] [INFO   ] Audit thread stopped.
+[2026-03-29 19:18:39] [INFO   ] === OPAC System stopped ===
+[2026-03-29 19:20:28] [INFO   ] === OPAC System starting ===
+[2026-03-29 19:20:28] [INFO   ] Audit thread started.
+[2026-03-29 19:20:29] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:20:40] [INFO   ] REGISTER OK â€” user: Matthew  role: user
+[2026-03-29 19:20:51] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:20:51] [INFO   ] LOGIN OK  â€” user: Matthew  role: user
+[2026-03-29 19:20:51] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:20:51] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:20:52] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:21:28] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 19:22:28] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 19:22:55] [INFO   ] BORROW: user=Matthew book_id=9
+[2026-03-29 19:22:55] [INFO   ] [EVENT] BOOK_BORROWED — username=Matthew;book_id=9
+[2026-03-29 19:22:55] [INFO   ] [AUDIT] Borrow recorded — username=Matthew;book_id=9
+[2026-03-29 19:23:28] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 19:23:37] [INFO   ] BORROW: user=Matthew book_id=9
+[2026-03-29 19:23:37] [INFO   ] [EVENT] BOOK_BORROWED — username=Matthew;book_id=9
+[2026-03-29 19:23:37] [INFO   ] [AUDIT] Borrow recorded — username=Matthew;book_id=9
+[2026-03-29 19:24:15] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:24:15] [INFO   ] LOGIN OK  â€” user: admin  role: admin
+[2026-03-29 19:24:15] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:24:15] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:24:15] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 19:24:27] [INFO   ] Audit thread stopped.
+[2026-03-29 19:24:27] [INFO   ] === OPAC System stopped ===
+[2026-03-29 21:55:43] [INFO   ] === OPAC System starting ===
+[2026-03-29 21:55:43] [INFO   ] Audit thread started.
+[2026-03-29 21:55:54] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 21:55:54] [INFO   ] LOGIN OK  â€” user: Matthew  role: user
+[2026-03-29 21:55:54] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 21:55:54] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 21:55:54] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 21:56:17] [INFO   ] BORROW: user=Matthew book_id=1
+[2026-03-29 21:56:17] [INFO   ] [EVENT] BOOK_BORROWED — username=Matthew;book_id=1
+[2026-03-29 21:56:17] [INFO   ] [AUDIT] Borrow recorded — username=Matthew;book_id=1
+[2026-03-29 21:56:44] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 21:57:28] [INFO   ] RETURN: user=Matthew book_id=1 overdue_days=0 fee=0.000000
+[2026-03-29 21:57:28] [INFO   ] [EVENT] BOOK_RETURNED — username=Matthew;book_id=1;fee=0.000000
+[2026-03-29 21:57:28] [INFO   ] [AUDIT] Return recorded — username=Matthew;book_id=1;fee=0.000000
+[2026-03-29 21:57:44] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:01:59] [INFO   ] === OPAC System starting ===
+[2026-03-29 22:01:59] [INFO   ] Audit thread started.
+[2026-03-29 22:02:10] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 22:02:10] [INFO   ] LOGIN OK  â€” user: Matthew  role: user
+[2026-03-29 22:02:10] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 22:02:10] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 22:02:11] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 22:02:59] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:03:04] [INFO   ] RETURN: user=Matthew book_id=9 overdue_days=0 fee=0.000000
+[2026-03-29 22:03:04] [INFO   ] [EVENT] BOOK_RETURNED — username=Matthew;book_id=9;fee=0.000000
+[2026-03-29 22:03:04] [INFO   ] [AUDIT] Return recorded — username=Matthew;book_id=9;fee=0.000000
+[2026-03-29 22:04:00] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:05:00] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:06:01] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:07:01] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:08:02] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:09:02] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:10:03] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:11:03] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:12:04] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:13:04] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:14:05] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:15:06] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:16:06] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:17:07] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:18:07] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:19:08] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:20:08] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:21:09] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:22:09] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:23:10] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:24:10] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:25:10] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:26:11] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:27:11] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:28:12] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:29:12] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:30:13] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:31:13] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:32:13] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:33:14] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:34:14] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:35:15] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:36:15] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:37:16] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:38:16] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:52:56] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 22:53:01] [INFO   ] RETURN: user=Matthew book_id=9 overdue_days=23 fee=460.000000
+[2026-03-29 22:53:01] [INFO   ] [EVENT] BOOK_RETURNED — username=Matthew;book_id=9;fee=460.000000
+[2026-03-29 22:53:01] [INFO   ] [AUDIT] Return recorded — username=Matthew;book_id=9;fee=460.000000
+[2026-03-29 23:13:12] [INFO   ] === OPAC System starting ===
+[2026-03-29 23:13:12] [INFO   ] Audit thread started.
+[2026-03-29 23:13:18] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:13:18] [INFO   ] LOGIN OK  â€” user: Matthew  role: user
+[2026-03-29 23:13:18] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:13:18] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:13:18] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:14:12] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 23:15:13] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 23:16:13] [INFO   ] [AUDIT] Heartbeat — system is running.
+[2026-03-29 23:17:30] [INFO   ] === OPAC System starting ===
+[2026-03-29 23:17:30] [INFO   ] Audit thread started.
+[2026-03-29 23:17:39] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:17:39] [INFO   ] LOGIN OK  â€” user: Matthew  role: user
+[2026-03-29 23:17:39] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:17:39] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:17:39] [INFO   ] Connected to MySQL — schema: opac_db
+[2026-03-29 23:18:31] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:19:05] [INFO   ] === OPAC System starting ===
+[2026-03-29 23:19:05] [INFO   ] Audit thread started.
+[2026-03-29 23:19:11] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-29 23:19:11] [INFO   ] LOGIN OK - user: Matthew  role: user
+[2026-03-29 23:19:11] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-29 23:19:11] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-29 23:19:11] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-29 23:20:05] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:21:06] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:22:06] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:23:06] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:24:07] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:25:07] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:26:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:27:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:28:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:29:09] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:30:09] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:31:10] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:32:10] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:33:10] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:34:11] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:35:11] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:36:12] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:37:12] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:38:12] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:39:13] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:40:13] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:41:14] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:42:14] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:43:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:44:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:45:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:46:16] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:47:16] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:48:17] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:49:17] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:50:17] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:51:18] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:52:18] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:53:19] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:54:19] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:55:22] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:56:22] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:57:23] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:58:23] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-29 23:59:24] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:00:24] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:01:25] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:02:25] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:03:26] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:04:26] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:05:27] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:06:27] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:07:28] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:08:28] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:09:28] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:10:29] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:11:29] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:12:30] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:13:30] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:14:31] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:15:31] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:16:31] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:17:32] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:18:32] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:19:33] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:20:33] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:21:33] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:22:34] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:23:34] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:24:34] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:25:35] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:26:35] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:27:36] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:28:36] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:29:36] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:30:37] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:31:37] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:32:38] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:33:38] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:34:39] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:35:39] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:36:39] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:37:40] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:38:40] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:39:41] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:40:41] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:41:42] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:42:42] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:43:42] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:44:43] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:45:43] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:46:44] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:47:44] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:48:45] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:49:45] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:50:45] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:51:46] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:52:46] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:53:47] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:54:47] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:55:48] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:56:48] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:57:48] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:58:49] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 00:59:49] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:00:50] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:01:50] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:02:51] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:03:51] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:04:51] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:05:52] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:06:52] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:07:53] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:08:53] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:09:53] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:10:54] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:11:54] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:12:55] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:13:55] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:14:55] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:15:56] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:16:56] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:17:57] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:18:57] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:19:58] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:20:58] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:21:59] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:22:59] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:24:00] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:25:00] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:26:01] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:27:01] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:28:01] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:29:02] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:30:02] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:31:03] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:32:03] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:33:04] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:34:04] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:35:05] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:36:05] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:37:05] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:38:06] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:39:06] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:40:07] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:41:07] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:42:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:43:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:44:08] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:45:09] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:46:09] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:47:10] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:48:10] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:49:11] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:50:11] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:51:11] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:52:12] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:53:12] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:54:13] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:55:13] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:56:13] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:57:14] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:58:14] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 01:59:14] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 02:00:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 02:01:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 02:01:28] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 02:01:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 02:01:38] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 02:01:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 02:01:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 02:01:38] [INFO   ] Connected to MySQL - [2026-03-30 03:25:32] [INFO   ] HTTP routes mounted. Listening on http://localhost:8080
+[2026-03-30 03:28:29] [INFO   ] HTTP routes mounted. Listening on http://localhost:8080
+[2026-03-30 03:57:32] [INFO   ] HTTP routes mounted. Listening on http://localhost:8080
+[2026-03-30 05:10:15] [INFO   ] === OPAC System starting ===
+[2026-03-30 05:10:15] [INFO   ] Audit thread started.
+[2026-03-30 05:10:21] [INFO   ] Connected to MySQL - schema: opac_db

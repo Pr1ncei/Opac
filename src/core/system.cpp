@@ -1,556 +1,70 @@
-#include "System.h"
+﻿#include "System.h"
+#include "../ui/menu.h"
+#include "../utils/Logger.h"
+#include "../utils/EventBus.h"
 #include <iostream>
-#include <cppconn/statement.h>
-#include <cppconn/resultset.h>
-#include "ui/menu.h"
+#include <chrono>
 
-using namespace std;
+// Constructor / Destructor
+System::System() : running_(false)
+{
+    Logger::getInstance().info("=== OPAC System starting ===");
+}
 
-void System::run() {
+System::~System()
+{
+    stopAuditThread();
+    Logger::getInstance().info("=== OPAC System stopped ===");
+}
+
+// run
+void System::run()
+{
+    startAuditThread();
+
     Menu menu;
     menu.mainMenu();
+
+    stopAuditThread();
 }
 
-void System::adminMenu(string username) {
-
-    int choice;
-
-    do {
-
-        cout << "\n=================================\n";
-        cout << "            ADMIN MENU\n";
-        cout << "=================================\n";
-        cout << "[1] Add Book\n";
-        cout << "[2] Edit Book\n";
-        cout << "[3] Delete Book\n";
-        cout << "[4] View Books\n";
-        cout << "[5] Search Book\n";
-        cout << "[6] View Borrowed Books\n";
-        cout << "[7] Logout\n";
-        cout << "---------------------------------\n";
-        cout << "Enter choice: ";
-
-        cin >> choice;
-
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid input!\n";
-            continue;
-        }
-
-        switch (choice) {
-
-        case 1: addBook(); break;
-        case 2: editBook(); break;
-        case 3: deleteBook(); break;
-        case 4: viewBooks("admin"); break;
-        case 5: searchBook(); break;
-        case 6: viewBorrowedBooks(""); break;
-        case 7: cout << "Logging out...\n"; break;
-        default: cout << "Invalid choice.\n";
-        }
-
-    } while (choice != 7);
-}
-
-void System::userMenu(string username) {
-
-    int choice;
-
-    do {
-
-        cout << "\n=================================\n";
-        cout << "             USER MENU\n";
-        cout << "=================================\n";
-        cout << "[1] View Books\n";
-        cout << "[2] Search Book\n";
-        cout << "[3] Borrow Book\n";
-        cout << "[4] Return Book\n";
-        cout << "[5] View My Borrowed Books\n";
-        cout << "[6] Logout\n";
-        cout << "---------------------------------\n";
-        cout << "Enter choice: ";
-
-        cin >> choice;
-
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid input!\n";
-            continue;
-        }
-
-        switch (choice) {
-
-        case 1: viewBooks("user"); break;
-        case 2: searchBook(); break;
-        case 3: borrowBook(username); break;
-        case 4: returnBook(username); break;
-        case 5: viewBorrowedBooks(username); break;
-        case 6: cout << "Logging out...\n"; break;
-        default: cout << "Invalid choice.\n";
-        }
-
-    } while (choice != 6);
-}
-
-void System::showBookDetails(int id)
+// Parallel Programming
+void System::startAuditThread()
 {
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    sql::ResultSet* res = stmt->executeQuery(
-        "SELECT * FROM books WHERE book_id=" + to_string(id)
-    );
-
-    if (!res->next())
-    {
-        cout << "Book not found.\n";
-        delete res;
-        delete stmt;
-        return;
-    }
-
-    cout << "\n===============================================================\n";
-    cout << "ID | Title | Author | Dewey\n";
-    cout << "===============================================================\n";
-
-    cout << res->getInt("book_id") << " | "
-        << res->getString("title") << " | "
-        << res->getString("author") << " | "
-        << res->getString("dewey") << endl;
-
-    cout << "===============================================================\n";
-
-    delete res;
-    delete stmt;
+    running_.store(true);
+    auditThread_ = std::thread(&System::auditLoop, std::ref(running_));
+    Logger::getInstance().info("Audit thread started.");
 }
 
-void System::addBook() {
-
-    string title, author, dewey;
-
-    cin.ignore();
-
-    cout << "\n========== ADD BOOK ==========\n";
-    cout << "Enter Title (0 to cancel): ";
-    getline(cin, title);
-
-    if (title == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    cout << "Enter Author (0 to cancel): ";
-    getline(cin, author);
-
-    if (author == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    cout << "Enter Dewey Decimal (0 to cancel): ";
-    getline(cin, dewey);
-
-    if (dewey == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    stmt->execute(
-        "INSERT INTO books(title,author,dewey,available) VALUES('" +
-        title + "','" + author + "','" + dewey + "',1)"
-    );
-
-    cout << "Book added successfully.\n";
-
-    delete stmt;
-}
-
-void System::editBook() {
-
-    string input;
-    int id;
-
-    cout << "\n========== EDIT BOOK ==========\n";
-    cout << "Enter Book ID to edit (0 to cancel): ";
-    cin >> input;
-
-    if (input == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    id = stoi(input);
-
-    showBookDetails(id);
-
-    cout << "\n";
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    sql::ResultSet* res = stmt->executeQuery(
-        "SELECT * FROM books WHERE book_id=" + to_string(id)
-    );
-
-    if (!res->next()) {
-        cout << "Book ID not found.\n";
-        delete res;
-        delete stmt;
-        return;
-    }
-
-    string oldTitle = res->getString("title");
-    string oldAuthor = res->getString("author");
-    string oldDewey = res->getString("dewey");
-
-    cin.ignore();
-
-    string title, author, dewey;
-
-    cout << "Current Title: " << oldTitle << endl;
-    cout << "New Title (Enter to keep / 0 to cancel): ";
-    getline(cin, title);
-
-    if (title == "0") {
-        cout << "Operation cancelled.\n";
-        delete res;
-        delete stmt;
-        return;
-    }
-
-    if (title.empty())
-        title = oldTitle;
-
-    cout << "Current Author: " << oldAuthor << endl;
-    cout << "New Author (Enter to keep / 0 to cancel): ";
-    getline(cin, author);
-
-    if (author == "0") {
-        cout << "Operation cancelled.\n";
-        delete res;
-        delete stmt;
-        return;
-    }
-
-    if (author.empty())
-        author = oldAuthor;
-
-    cout << "Current Dewey Decimal: " << oldDewey << endl;
-    cout << "New Dewey Decimal (Enter to keep / 0 to cancel): ";
-    getline(cin, dewey);
-
-    if (dewey == "0") {
-        cout << "Operation cancelled.\n";
-        delete res;
-        delete stmt;
-        return;
-    }
-
-    if (dewey.empty())
-        dewey = oldDewey;
-
-    int rows = stmt->executeUpdate(
-        "UPDATE books SET title='" + title +
-        "', author='" + author +
-        "', dewey='" + dewey +
-        "' WHERE book_id=" + to_string(id)
-    );
-
-    if (rows > 0)
-        cout << "Book updated successfully.\n";
-    else
-        cout << "Update failed.\n";
-
-    delete res;
-    delete stmt;
-}
-
-void System::deleteBook() {
-
-    string input;
-
-    cout << "\n========== DELETE BOOK ==========\n";
-    cout << "Enter Book ID to delete (0 to cancel): ";
-    cin >> input;
-
-    if (input == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    int id = stoi(input);
-
-    showBookDetails(id);
-
-    cout << "\n";
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    cout << "Are you sure you want to delete this book? (y/n): ";
-
-    char confirm;
-    cin >> confirm;
-
-    if (confirm != 'y' && confirm != 'Y') {
-        cout << "Delete cancelled.\n";
-        delete stmt;
-        return;
-    }
-
-    int rows = stmt->executeUpdate(
-        "DELETE FROM books WHERE book_id=" + to_string(id)
-    );
-
-    if (rows > 0)
-        cout << "Book deleted successfully.\n";
-    else
-        cout << "Book ID not found.\n";
-
-    delete stmt;
-}
-
-void System::viewBooks(string role) {
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    sql::ResultSet* res = stmt->executeQuery("SELECT * FROM books");
-
-    cout << "\n===============================================================\n";
-
-    if (role == "admin")
-        cout << "ID | Title | Author | Dewey | Status | Borrowed By\n";
-    else
-        cout << "ID | Title | Author | Dewey | Status\n";
-
-    cout << "===============================================================\n";
-
-    while (res->next()) {
-
-        cout << res->getInt("book_id") << " | "
-            << res->getString("title") << " | "
-            << res->getString("author") << " | "
-            << res->getString("dewey") << " | ";
-
-        if (res->getBoolean("available"))
-            cout << "Available";
-        else
-            cout << "Borrowed";
-
-        if (role == "admin") {
-
-            string borrower = res->getString("borrowed_by");
-
-            if (borrower == "")
-                borrower = "-";
-
-            cout << " | " << borrower;
-        }
-
-        cout << endl;
-    }
-
-    cout << "===============================================================\n";
-
-    delete res;
-    delete stmt;
-}
-
-void System::searchBook() {
-
-    string keyword;
-
-    cin.ignore();
-
-    cout << "\n========== SEARCH BOOK ==========\n";
-    cout << "Enter Title / Author / Dewey / Book ID (0 to cancel): ";
-    getline(cin, keyword);
-
-    if (keyword == "0") {
-        cout << "Operation cancelled.\n";
-        return;
-    }
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    sql::ResultSet* res = stmt->executeQuery(
-        "SELECT * FROM books WHERE "
-        "title LIKE '%" + keyword + "%' OR "
-        "author LIKE '%" + keyword + "%' OR "
-        "dewey LIKE '%" + keyword + "%' OR "
-        "book_id LIKE '%" + keyword + "%'"
-    );
-
-    cout << "\n===============================================================\n";
-    cout << "ID | Title | Author | Dewey | Status\n";
-    cout << "===============================================================\n";
-
-    bool found = false;
-
-    while (res->next()) {
-
-        found = true;
-
-        cout << res->getInt("book_id") << " | "
-            << res->getString("title") << " | "
-            << res->getString("author") << " | "
-            << res->getString("dewey") << " | ";
-
-        if (res->getBoolean("available"))
-            cout << "Available\n";
-        else
-            cout << "Borrowed\n";
-    }
-
-    if (!found)
-        cout << "No matching books found.\n";
-
-    cout << "===============================================================\n";
-
-    delete res;
-    delete stmt;
-}
-
-void System::borrowBook(string username)
+void System::stopAuditThread()
 {
-    try
+    if (running_.load())
     {
-        string input;
-        cout << "\n========== BORROW BOOK ==========\n";
-        cout << "Enter Book ID to borrow (0 cancel): ";
-        cin >> input;
-
-        if (input == "0") {
-            cout << "Operation cancelled.\n";
-            return;
-        }
-
-        int id = stoi(input);
-
-        showBookDetails(id);
-
-        cout << "\n";
-
-        sql::Connection* con = db.getConnection();
-        sql::Statement* stmt = con->createStatement();
-
-        stmt->execute(
-            "UPDATE books SET "
-            "available=0,"
-            "borrowed_by='" + username + "',"
-            "borrow_date=NOW(),"
-            "due_date=DATE_ADD(NOW(), INTERVAL 14 DAY)"
-            " WHERE book_id=" + to_string(id) + " AND available=1"
-        );
-
-        cout << "Book borrowed successfully.\n";
-        cout << "Return within 14 days.\n";
-
-        delete stmt;
-    }
-    catch (exception& e)
-    {
-        cout << "Borrow error: " << e.what() << endl;
+        running_.store(false);
+        if (auditThread_.joinable())
+            auditThread_.join();
+        Logger::getInstance().info("Audit thread stopped.");
     }
 }
 
-void System::returnBook(string username)
+void System::auditLoop(std::atomic<bool>& running)
 {
-    try
+    EventBus::getInstance().subscribe("BOOK_BORROWED", [](const Event& e) {
+        Logger::getInstance().info(
+            "[AUDIT] Borrow recorded - " + e.payload);
+        });
+
+    EventBus::getInstance().subscribe("BOOK_RETURNED", [](const Event& e) {
+        Logger::getInstance().info(
+            "[AUDIT] Return recorded - " + e.payload);
+        });
+
+    while (running.load())
     {
-        string input;
-        cout << "\n========== RETURN BOOK ==========\n";
-        cout << "Enter Book ID to return (0 cancel): ";
-        cin >> input;
+        for (int i = 0; i < 60 && running.load(); ++i)
+            std::this_thread::sleep_for(std::chrono::seconds(1));
 
-        if (input == "0") {
-            cout << "Operation cancelled.\n";
-            return;
-        }
-
-        int id = stoi(input);
-
-        showBookDetails(id);
-
-        cout << "\n";
-
-        sql::Connection* con = db.getConnection();
-        sql::Statement* stmt = con->createStatement();
-
-        sql::ResultSet* res = stmt->executeQuery(
-            "SELECT due_date FROM books WHERE book_id=" + to_string(id)
-        );
-
-        if (res->next())
-        {
-            stmt->execute(
-                "UPDATE books SET "
-                "available=1,"
-                "borrowed_by=NULL,"
-                "return_date=NOW() "
-                "WHERE book_id=" + to_string(id)
-            );
-
-            cout << "Book returned successfully.\n";
-            cout << "Late fees may apply if overdue.\n";
-        }
-
-        delete res;
-        delete stmt;
+        if (running.load())
+            Logger::getInstance().info("[AUDIT] Heartbeat - system is running.");
     }
-    catch (exception& e)
-    {
-        cout << "Return error: " << e.what() << endl;
-    }
-}
-
-void System::viewBorrowedBooks(string username) {
-
-    sql::Connection* con = db.getConnection();
-    sql::Statement* stmt = con->createStatement();
-
-    string query;
-
-    if (username == "")
-        query = "SELECT * FROM books WHERE available=0";
-    else
-        query = "SELECT * FROM books WHERE borrowed_by='" + username + "'";
-
-    sql::ResultSet* res = stmt->executeQuery(query);
-
-    cout << "\n===============================================================\n";
-    cout << "ID | Title | Author | Dewey\n";
-    cout << "===============================================================\n";
-
-    bool found = false;
-
-    while (res->next()) {
-
-        found = true;
-
-        cout << res->getInt("book_id") << " | "
-            << res->getString("title") << " | "
-            << res->getString("author") << " | "
-            << res->getString("dewey");
-
-        if (username == "")
-            cout << " | Borrowed by: " << res->getString("borrowed_by");
-
-        cout << endl;
-    }
-
-    if (!found)
-        cout << "No borrowed books found.\n";
-
-    cout << "===============================================================\n";
-
-    delete res;
 }

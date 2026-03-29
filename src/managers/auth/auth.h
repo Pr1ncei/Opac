@@ -3,17 +3,22 @@
 #include <cppconn/statement.h>
 #include <cppconn/resultset.h>
 #include "../../db/Database.h"
+#include "../../models/Account.h"
 
 class AuthService
 {
-private: 
-	Database db; 
-
 public:
-	std::string login(std::string username, std::string password);
-	bool registerUser(std::string username, std::string password, std::string role);
+    // Returns an Account with the user's role, or an empty Account on failure.
+    Account login(const std::string& username, const std::string& password);
 
-	bool userExists(std::string username);
+    // Registers a new user. Returns false if username already exists.
+    bool registerUser(const std::string& username,
+                      const std::string& password,
+                      const std::string& role = "user");
 
+    // Returns true if the username exists in the database.
+    bool userExists(const std::string& username);
+
+private:
+    Database db_;
 };
-

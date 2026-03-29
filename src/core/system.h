@@ -1,39 +1,23 @@
-#ifndef SYSTEM_H
-#define SYSTEM_H
-
-#include "../db/Database.h"
-#include "../models/Book.h"
-#include "../models/Account.h"
+﻿#pragma once
 #include <string>
+#include <thread>
+#include <atomic>
 
-using namespace std;
-
-class System {
-
-private:
-    Database db;
-
+class System
+{
 public:
+    System();
+    ~System();
 
+    // Start the application.
     void run();
 
-    void login();
-    void registerUser();
+private:
+    // Parallel Programming 
+    std::thread      auditThread_;
+    std::atomic<bool> running_;
 
-    void adminMenu(string username);
-    void userMenu(string username);
-
-    void showBookDetails(int id);
-
-    void addBook();
-    void editBook();
-    void deleteBook();
-    void viewBooks(string role);
-    void searchBook();
-
-    void borrowBook(string username);
-    void returnBook(string username);
-    void viewBorrowedBooks(string username);
+    void startAuditThread();
+    void stopAuditThread();
+    static void auditLoop(std::atomic<bool>& running);
 };
-
-#endif

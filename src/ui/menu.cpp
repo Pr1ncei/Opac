@@ -1,108 +1,131 @@
-#include "menu.h"
+﻿#include "menu.h"
+#include "../utils/Logger.h"
+#include "../utils/EventBus.h"
+#include <iostream>
+#include <limits>
 
+// ============================================================================
+//  mainMenu
+// ============================================================================
 void Menu::mainMenu()
 {
-	int choice; 
+    EventBus& bus = EventBus::getInstance();
 
-	do
-	{
+    bus.subscribe("LOGIN_SUCCESS", [](const Event& e) {
+        (void)e;
+        });
+    bus.subscribe("BOOK_BORROWED", [](const Event& e) {
+        Logger::getInstance().info("[EVENT] BOOK_BORROWED — " + e.payload);
+        });
+    bus.subscribe("BOOK_RETURNED", [](const Event& e) {
+        Logger::getInstance().info("[EVENT] BOOK_RETURNED — " + e.payload);
+        });
+    bus.subscribe("BOOK_ADDED", [](const Event& e) {
+        Logger::getInstance().info("[EVENT] BOOK_ADDED   — " + e.payload);
+        });
+    bus.subscribe("BOOK_DELETED", [](const Event& e) {
+        Logger::getInstance().info("[EVENT] BOOK_DELETED — " + e.payload);
+        });
+
+    int choice;
+    do
+    {
         std::cout << "\n=================================\n";
-        std::cout << "        LIBRARY SYSTEM\n";
+        std::cout << "        OPAC LIBRARY SYSTEM\n";
         std::cout << "=================================\n";
         std::cout << "[1] Login\n";
         std::cout << "[2] Register\n";
         std::cout << "[3] Exit\n";
         std::cout << "---------------------------------\n";
-        std::cout << "Enter choice: ";
-	
-        std::cin >> choice; 
 
-        if (std::cin.fail()) {
-            std::cin.clear();
-            std::cin.ignore(1000, '\n');
-            std::cout << "Invalid input!\n";
-            continue;
-        }
+        choice = readInt("Enter choice: ");
 
         switch (choice)
         {
-        case 1: loginMenu(); break; 
-        case 2: registerMenu(); break; 
-        case 3: std::cout << "Exiting system..\n"; break;
+        case 1: loginMenu();    break;
+        case 2: registerMenu(); break;
+        case 3: std::cout << "Goodbye!\n"; break;
         default: std::cout << "Invalid choice.\n";
         }
-    
     } while (choice != 3);
-
 }
 
+// ============================================================================
+//  loginMenu
+// ============================================================================
 void Menu::loginMenu()
 {
-    std::string username, password; 
+    std::string username, password;
 
     std::cout << "\n========== LOGIN ==========\n";
-    std::cout << "Username (0 to cancel): ";
+    std::cout << "Username (0 cancel): ";
     std::cin >> username;
+    if (username == "0") return;
 
-    if (username == "0") return; 
-
-    std::cout << "Password (0 to cancel): ";
+    std::cout << "Password (0 cancel): ";
     std::cin >> password;
+    if (password == "0") return;
 
-    if (password == "0") return; 
+    AuthService auth;
+    Account account = auth.login(username, password);
 
-    AuthService auth; 
-    std::string role = auth.login(username, password);
-
-    if (!role.empty())
+    if (!account.isEmpty())
     {
-        std::cout << "\nWelcome " << username << "\n";
+        std::cout << "\nWelcome, " << account.getUsername() << "!\n";
 
-        if (role == "admin")
-            adminMenu(username);
+        if (account.isAdmin())
+            adminMenu(account.getUsername());
         else
-            userMenu(username);
+            userMenu(account.getUsername());
     }
     else
     {
-        std::cout << "Invalid login.\n";
+        std::cout << "Invalid username or password.\n";
     }
 }
 
+// ============================================================================
+//  registerMenu
+// ============================================================================
 void Menu::registerMenu()
 {
-    std::string username, password, confirm; 
-    AuthService auth; 
+    std::string username, password, confirm;
+    AuthService auth;
 
     std::cout << "\n========== REGISTER ==========\n";
+
+    // Username loop.
     while (true)
     {
-        std::cout << "Enter Username (0 to cancel): ";
+        std::cout << "Username (0 cancel): ";
         std::cin >> username;
-
         if (username == "0") return;
 
-        if (username.empty())
+        if (username.length() < 3)
         {
-            std::cout << "Username cannot be empty.\n";
+            std::cout << "Username must be at least 3 characters.\n";
             continue;
         }
-
         if (auth.userExists(username))
         {
-            std::cout << "Username already exists.\n";
+            std::cout << "Username already taken.\n";
             continue;
         }
-
         break;
     }
 
+    // Password loop.
     while (true)
     {
-        std::cout << "Enter Password (0 to cancel): ";
+        std::cout << "Password (0 cancel): ";
         std::cin >> password;
-
         if (password == "0") return;
+
+        if (password.length() < 4)
+        {
+            std::cout << "Password must be at least 4 characters.\n";
+            continue;
+        }
 
         std::cout << "Confirm Password: ";
         std::cin >> confirm;
@@ -112,28 +135,112 @@ void Menu::registerMenu()
             std::cout << "Passwords do not match.\n";
             continue;
         }
-
         break;
     }
 
     if (auth.registerUser(username, password, "user"))
-    {
-        std::cout << "Account created successfully!\n";
-    } 
+        std::cout << "Account created! You may now log in.\n";
     else
+        std::cout << "Registration failed. Please try again.\n";
+}
+
+// ============================================================================
+//  adminMenu
+// ============================================================================
+void Menu::adminMenu(const std::string& username)
+{
+    BookManager   bookMgr;
+    BorrowManager borrowMgr;
+
+    int choice;
+    do
     {
-        std::cout << "Something went wrong. Please try again.\n";
+        std::cout << "\n=================================\n";
+        std::cout << "     ADMIN MENU (" << username << ")\n";
+        std::cout << "=================================\n";
+        std::cout << "[1]  Add Book\n";
+        std::cout << "[2]  Edit Book\n";
+        std::cout << "[3]  Delete Book\n";
+        std::cout << "[4]  View All Books\n";
+        std::cout << "[5]  Search Book\n";
+        std::cout << "[6]  View All Borrowed Books\n";
+        std::cout << "[7]  Logout\n";
+        std::cout << "---------------------------------\n";
+
+        choice = readInt("Enter choice: ");
+
+        switch (choice)
+        {
+        case 1: bookMgr.addBook();                break;
+        case 2: bookMgr.editBook();               break;
+        case 3: bookMgr.deleteBook();             break;
+        case 4: bookMgr.viewBooks("admin");       break;
+        case 5: bookMgr.searchBook();             break;
+        case 6: borrowMgr.viewBorrowedBooks(""); break;  // "" = admin view
+        case 7: std::cout << "Logged out.\n";    break;
+        default: std::cout << "Invalid choice.\n";
+        }
+    } while (choice != 7);
+}
+
+// ============================================================================
+//  userMenu
+// ============================================================================
+void Menu::userMenu(const std::string& username)
+{
+    BookManager   bookMgr;
+    BorrowManager borrowMgr;
+
+    int choice;
+    do
+    {
+        std::cout << "\n=================================\n";
+        std::cout << "     USER MENU (" << username << ")\n";
+        std::cout << "=================================\n";
+        std::cout << "[1] View Books\n";
+        std::cout << "[2] Search Book\n";
+        std::cout << "[3] Borrow Book\n";
+        std::cout << "[4] Return Book\n";
+        std::cout << "[5] My Borrowed Books\n";
+        std::cout << "[6] Logout\n";
+        std::cout << "---------------------------------\n";
+
+        choice = readInt("Enter choice: ");
+
+        switch (choice)
+        {
+        case 1: bookMgr.viewBooks("user");             break;
+        case 2: bookMgr.searchBook();                  break;
+        case 3: borrowMgr.borrowBook(username);        break;
+        case 4: borrowMgr.returnBook(username);        break;
+        case 5: borrowMgr.viewBorrowedBooks(username); break;
+        case 6: std::cout << "Logged out.\n";          break;
+        default: std::cout << "Invalid choice.\n";
+        }
+    } while (choice != 6);
+}
+
+// ============================================================================
+//  Input helpers
+// ============================================================================
+
+// Safely reads an integer, loops on invalid input.
+int Menu::readInt(const std::string& prompt)
+{
+    int val;
+    while (true)
+    {
+        std::cout << prompt;
+        std::cin >> val;
+        if (!std::cin.fail()) break;
+        clearInputError();
+        std::cout << "Please enter a number.\n";
     }
+    return val;
 }
 
-void Menu::adminMenu(std::string username)
+void Menu::clearInputError()
 {
-    std::cout << "\n===== ADMIN MENU for " << username << " =====\n";
-    // TODO: implement admin options
-}
-
-void Menu::userMenu(std::string username)
-{
-    std::cout << "\n===== USER MENU for " << username << " =====\n";
-    // TODO: implement admin options
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

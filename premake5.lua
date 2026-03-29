@@ -11,7 +11,11 @@ project "Opac"
   cppdialect "C++17"
 
   -- Source files
-  files { "src/**.cpp", "src/**.h" }
+  files { 
+    "src/**.cpp", 
+    "src/**.h", 
+    "src/**.hpp" 
+  }
 
   -- Include Directories
   includedirs {
@@ -41,4 +45,3 @@ project "Opac"
       optimize "On"
       staticruntime "off"
       runtime "Release"
-
