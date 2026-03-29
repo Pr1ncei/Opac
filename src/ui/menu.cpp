@@ -124,5 +124,16 @@ void Menu::registerMenu()
     {
         std::cout << "Something went wrong. Please try again.\n";
     }
+}
 
+void Menu::adminMenu(std::string username)
+{
+    std::cout << "\n===== ADMIN MENU for " << username << " =====\n";
+    // TODO: implement admin options
+}
+
+void Menu::userMenu(std::string username)
+{
+    std::cout << "\n===== USER MENU for " << username << " =====\n";
+    // TODO: implement admin options
 }
