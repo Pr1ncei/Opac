@@ -1,18 +1,10 @@
-﻿// ============================================================================
-//  BookManager_gui.cpp
-//  GUI wrapper methods — no std::cin / std::cout.
-//  Compile this alongside your existing BookManager.cpp.
-// ============================================================================
-
-#include "../books/BookManager.h"
+﻿#include "../books/BookManager.h"
 #include "../../utils/Logger.h"
 #include "../../utils/EventBus.h"
 #include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include <stdexcept>
-
-// ─── Internal helper ─────────────────────────────────────────────────────────
 
 static BookRow rowFromResult(sql::ResultSet* res)
 {
@@ -25,8 +17,6 @@ static BookRow rowFromResult(sql::ResultSet* res)
     r.availableCopies = res->getInt("available_copies");
     return r;
 }
-
-// ─── getAllBooks ──────────────────────────────────────────────────────────────
 
 std::vector<BookRow> BookManager::getAllBooks()
 {
@@ -84,8 +74,6 @@ std::vector<BookRow> BookManager::searchBooksGui(const std::string& keyword)
     return books;
 }
 
-// ─── getStats ────────────────────────────────────────────────────────────────
-
 BookStats BookManager::getStats()
 {
     BookStats s{};
@@ -114,8 +102,6 @@ BookStats BookManager::getStats()
     }
     return s;
 }
-
-// ─── addBookGui ───────────────────────────────────────────────────────────────
 
 bool BookManager::addBookGui(const std::string& title,
     const std::string& author,
@@ -150,9 +136,6 @@ bool BookManager::addBookGui(const std::string& title,
         return false;
     }
 }
-
-// ─── editBookGui ──────────────────────────────────────────────────────────────
-
 bool BookManager::editBookGui(int bookId,
     const std::string& title,
     const std::string& author,
@@ -163,7 +146,7 @@ bool BookManager::editBookGui(int bookId,
     {
         sql::Connection* con = db_.getConnection();
 
-        // Fetch current values so empty / sentinel args fall back gracefully
+        // Fetch current values so empty args fall back gracefully
         std::unique_ptr<sql::PreparedStatement> sel(
             con->prepareStatement(
                 "SELECT title, author, dewey, total_copies"
@@ -204,8 +187,6 @@ bool BookManager::editBookGui(int bookId,
         return false;
     }
 }
-
-// ─── deleteBook ────────────────────────────────────────────────────────────
 
 bool BookManager::deleteBook(int bookId)
 {

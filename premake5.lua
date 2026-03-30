@@ -1,3 +1,4 @@
+-- DEPRECATED: This project now uses CMake. This file will be removed in future versions.
 -- premake5.lua
 
 local QT_ROOT = "F:/Qt/6.11.0/msvc2022_64"
@@ -28,13 +29,12 @@ project "Opac"
     "src/**.h",
     "src/**.hpp",
 
-    -- 👇 THIS IS THE KEY FIX
     "moc/**.cpp"
   }
 
   includedirs {
     "src",
-    "moc", -- 👈 include generated moc files
+    "moc", 
     "lib/mysql/include/jdbc/",
     QT_ROOT .. "/include",
     QT_ROOT .. "/include/QtCore",
@@ -47,19 +47,11 @@ project "Opac"
     QT_ROOT .. "/lib",
   }
 
-  -- =========================================================
-  -- 🔥 AUTO MOC GENERATION
-  -- =========================================================
   prebuildcommands {
     '{MKDIR} moc',
-
-    -- Run moc on ALL Qt headers
     'for %%f in (src\\ui\\*.h) do "' .. QT_ROOT .. '/bin/moc.exe" "%%f" -o "moc\\moc_%%~nf.cpp"'
   }
 
-  -- =========================================================
-  -- DEBUG
-  -- =========================================================
   filter "configurations:Debug"
     symbols "On"
     runtime "Debug"
@@ -71,9 +63,6 @@ project "Opac"
       "Qt6Widgetsd",
     }
 
-  -- =========================================================
-  -- RELEASE
-  -- =========================================================
   filter "configurations:Release"
     optimize "On"
     runtime "Release"

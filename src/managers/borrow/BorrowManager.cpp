@@ -1,10 +1,4 @@
-﻿// ============================================================================
-//  BorrowManager_gui.cpp
-//  GUI wrapper methods — no std::cin / std::cout.
-//  Compile this alongside your existing BorrowManager.cpp.
-// ============================================================================
-
-#include "../borrow/BorrowManager.h"
+﻿#include "../borrow/BorrowManager.h"
 #include "../../utils/Logger.h"
 #include "../../utils/EventBus.h"
 #include <cppconn/prepared_statement.h>
@@ -13,24 +7,16 @@
 #include <ctime>
 #include <stdexcept>
 
-// ─── BorrowRow::isOverdue ────────────────────────────────────────────────────
-
 bool BorrowRow::isOverdue() const
 {
     if (!returnDate.empty())
         return overdueDays > 0;
-
-    // Not yet returned — compare dueDate against today
     std::time_t now = std::time(nullptr);
     std::tm* tmNow = std::localtime(&now);
     char buf[11];
     std::strftime(buf, sizeof(buf), "%Y-%m-%d", tmNow);
     return dueDate < std::string(buf);
 }
-
-// ─── Internal helper ─────────────────────────────────────────────────────────
-// Query must SELECT: borrow_id, book_id, title (from JOIN), username,
-//                    borrow_date, due_date, return_date, overdue_days, fee
 
 static BorrowRow rowFromResult(sql::ResultSet* res)
 {
@@ -46,14 +32,11 @@ static BorrowRow rowFromResult(sql::ResultSet* res)
     r.fee = res->isNull("fee") ? 0.0 : res->getDouble("fee");
     return r;
 }
-
-// ─── borrowBookGui ───────────────────────────────────────────────────────────
-
 bool BorrowManager::borrowBookGui(int bookId, const std::string& username)
 {
     try
     {
-        Book book = bookMgr_.getBookById(bookId);   // throws if not found
+        Book book = bookMgr_.getBookById(bookId);   
         if (!book.isAvailable()) return false;
 
         sql::Connection* con = db_.getConnection();
@@ -98,8 +81,6 @@ bool BorrowManager::borrowBookGui(int bookId, const std::string& username)
     }
 }
 
-// ─── returnBookGui ───────────────────────────────────────────────────────────
-
 bool BorrowManager::returnBookGui(int bookId,
     const std::string& username,
     const std::string& returnDate,
@@ -108,8 +89,6 @@ bool BorrowManager::returnBookGui(int bookId,
     try
     {
         sql::Connection* con = db_.getConnection();
-
-        // Find the active borrow record
         std::unique_ptr<sql::PreparedStatement> sel(
             con->prepareStatement(
                 "SELECT borrow_id, due_date "
@@ -127,7 +106,6 @@ bool BorrowManager::returnBookGui(int bookId,
         int    days = FeeCalculator::overdueDays(dueDate, returnDate);
         double fee = FeeCalculator::overdueFee(days);
 
-        // Caller must confirm payment before we commit when there is a fee
         if (fee > 0.0 && !confirmPayment) return false;
 
         std::unique_ptr<sql::PreparedStatement> upd(
@@ -162,8 +140,6 @@ bool BorrowManager::returnBookGui(int bookId,
     }
 }
 
-// ─── getActiveBorrow ─────────────────────────────────────────────────────────
-
 BorrowRow BorrowManager::getActiveBorrow(int bookId, const std::string& username)
 {
     BorrowRow empty{};
@@ -193,8 +169,6 @@ BorrowRow BorrowManager::getActiveBorrow(int bookId, const std::string& username
     return empty;
 }
 
-// ─── getActiveBorrowsForUser ─────────────────────────────────────────────────
-
 std::vector<BorrowRow> BorrowManager::getActiveBorrowsForUser(
     const std::string& username)
 {
@@ -223,8 +197,6 @@ std::vector<BorrowRow> BorrowManager::getActiveBorrowsForUser(
     }
     return rows;
 }
-
-// ─── getAllActiveBorrows ──────────────────────────────────────────────────────
 
 std::vector<BorrowRow> BorrowManager::getAllActiveBorrows()
 {
