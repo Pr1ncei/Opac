@@ -4,6 +4,8 @@ Release/
 x64/
 x86/
 bin/
+bin-int/
+moc/
 obj/ 
 
 # Visual Studio
@@ -15,6 +17,10 @@ obj/
 *.slnx
 *.vcxproj
 *.vcxproj.filters
+
+# QT files
+.qmake.stash
+*.qtvscr
 
 # Compiled files
 *.obj
