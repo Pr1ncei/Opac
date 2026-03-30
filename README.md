@@ -1,5 +1,5 @@
-# OPAC
-Online Public Access Catalog (OPAC) Project in Partial Fullfillment of Design and Implementation of Programming Languages (DIPROGLANG)
+# SmartLib, formerly OPAC
+SmartLib is a Online Public Access Catalog (OPAC) Project as a Final Requirement of Design and Implementation of Programming Languages (DIPROGLANG)
 
 ## I. Dependencies
 
@@ -8,8 +8,10 @@ Make sure you have the following installed before setting up the project:
 - [Visual Studio 2026 Community Edition](https://visualstudio.microsoft.com/downloads/)
   *(Visual Studio 2022 and 2019 is also supported)*
 - [MySQL 8.0.45](https://dev.mysql.com/downloads/installer/)  
-- [Premake 5](https://premake.github.io/download/)  
+- [CMake 3.25+](https://cmake.org/download/)
 
+
+> Premake is no longer required. The project now uses **CMake** for development and building.
 ---
 
 ##  II. Notes & Setup Requirements
@@ -45,8 +47,7 @@ Make sure you have the following installed before setting up the project:
 Follow these steps to set up the `opac_db` database for the OPAC system.
 
 1. Start MySQL Server
-
-2. Navigate to the project root directory, then run the SQL Script by:
+2. Open a terminal at the project root and run:
 ```bash
 mysql -u root -p < src/db/opac_db.sql
 ```
@@ -78,7 +79,7 @@ books
 Use this account to log in as administrator:
 ```
 Username: admin
-Password: admin
+Password: admin123
 ```
 
 ### Important Notes
@@ -92,13 +93,23 @@ Make sure to back up any important data before running it.
 ---
 ## IV. Project Setup
 
-1. Generate the Visual Studio solution:
+1. Clone the repo 
+```bash
+git clone <repo-url>
+cd Opac
+```
 
-    generate_sln.bat
+2. Create a build folder and generate the solution:
+```bash
+cmake -S . -B build -DCMAKE_PREFIX_PATH="F:/Qt/6.11.0/msvc2022_64"
+```
 
-2. Open the generated `.sln` file in Visual Studio  
+3. Build the project:
+```bash
+cmake --build build --config Release
+```
 
-3. Create a `.env` file in the **root directory**:
+4. Create a `.env` file in the **root directory**:
     ```
     DB_SERVER=your_mysql_address_and_port  
     DB_USERNAME=your_mysql_username  
@@ -115,9 +126,7 @@ Make sure to back up any important data before running it.
      - Release
      - x64
 
-
 5. Build and run the executable or go to `bin/Release`
-
 ---
 
 ## V. Notes
