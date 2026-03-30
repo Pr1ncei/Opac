@@ -348,3 +348,602 @@
 [2026-03-30 05:10:15] [INFO   ] === OPAC System starting ===
 [2026-03-30 05:10:15] [INFO   ] Audit thread started.
 [2026-03-30 05:10:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 14:59:26] [INFO   ] === OPAC System starting ===
+[2026-03-30 14:59:26] [INFO   ] Audit thread started.
+[2026-03-30 14:59:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 14:59:39] [WARNING] LOGIN FAIL - user: admin
+[2026-03-30 14:59:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 15:00:04] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 15:00:04] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 15:00:04] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 15:00:04] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 15:00:04] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 15:00:27] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 15:00:58] [INFO   ] Audit thread stopped.
+[2026-03-30 15:00:58] [INFO   ] === OPAC System stopped ===
+[2026-03-30 16:24:30] [INFO   ] === OPAC System starting ===
+[2026-03-30 16:24:30] [INFO   ] Audit thread started.
+[2026-03-30 16:25:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 16:25:08] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 16:25:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 16:25:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 16:25:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 16:25:12] [INFO   ] Audit thread stopped.
+[2026-03-30 16:25:12] [INFO   ] === OPAC System stopped ===
+[2026-03-30 19:29:51] [INFO   ] === OPAC System starting ===
+[2026-03-30 19:29:51] [INFO   ] Audit thread started.
+[2026-03-30 19:30:05] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:05] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 19:30:05] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:05] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:05] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:05] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:37] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 19:30:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:30:52] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:31:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:02] [INFO   ] BOOK ADDED (GUI): mathhewgreen
+[2026-03-30 19:31:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:27] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:27] [INFO   ] REGISTER OK - user: skibidi  role: user
+[2026-03-30 19:31:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:37] [INFO   ] LOGIN OK - user: skibidi  role: user
+[2026-03-30 19:31:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:31:52] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:32:53] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:32:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:32:54] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 19:32:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:32:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:32:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:32:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:33:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:33:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:33:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:33:53] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:34:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:34:15] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 19:34:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:34:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:34:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:34:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:34:54] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:35:55] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:36:55] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:36:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:55] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 19:36:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:36:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:37:56] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:38:56] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:39:57] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:40:57] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:41:58] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:42:58] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:43:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:41] [INFO   ] REGISTER OK - user: Duke  role: user
+[2026-03-30 19:43:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:50] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 19:43:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 19:43:59] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:45:00] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 19:45:49] [INFO   ] Audit thread stopped.
+[2026-03-30 19:45:49] [INFO   ] === OPAC System stopped ===
+[2026-03-30 20:02:22] [INFO   ] === OPAC System starting ===
+[2026-03-30 20:02:22] [INFO   ] Audit thread started.
+[2026-03-30 20:02:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:02:36] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 20:02:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:02:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:02:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:02:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:03:23] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:04:24] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:04:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:04:51] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:04:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:04:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:04:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:04:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:15] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 20:05:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:15] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:24] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:05:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:31] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:05:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:40] [INFO   ] BORROW (GUI): user=Duke book_id=1
+[2026-03-30 20:05:40] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=1
+[2026-03-30 20:05:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:51] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 20:05:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:05:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:07] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:06:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:14] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:14] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:25] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:06:26] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:26] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:28] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:28] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:06:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:25] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:07:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:38] [INFO   ] BORROW (GUI): user=Duke book_id=2
+[2026-03-30 20:07:38] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=2
+[2026-03-30 20:07:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:46] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 20:07:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:46] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:07:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:08:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:08:26] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:09:27] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:10:27] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:11:28] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:12:28] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:13:10] [INFO   ] Audit thread stopped.
+[2026-03-30 20:13:10] [INFO   ] === OPAC System stopped ===
+[2026-03-30 20:26:00] [INFO   ] === OPAC System starting ===
+[2026-03-30 20:26:00] [INFO   ] Audit thread started.
+[2026-03-30 20:26:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:30] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:26:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:30] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:40] [INFO   ] BORROW (GUI): user=Duke book_id=1
+[2026-03-30 20:26:40] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=1
+[2026-03-30 20:26:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:49] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 20:26:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:58] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:26:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:26:58] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:00] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:27:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:02] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:02] [INFO   ] BORROW (GUI): user=Duke book_id=1
+[2026-03-30 20:27:02] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=1
+[2026-03-30 20:27:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:10] [INFO   ] LOGIN OK - user: Admin  role: admin
+[2026-03-30 20:27:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:45] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:27:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:51] [INFO   ] RETURN (GUI): user=Duke book_id=1 overdue_days=0 fee=0.000000
+[2026-03-30 20:27:51] [INFO   ] [AUDIT] Return recorded - username=Duke;book_id=1;fee=0.000000
+[2026-03-30 20:27:52] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:52] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:52] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:52] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:55] [INFO   ] RETURN (GUI): user=Duke book_id=1 overdue_days=0 fee=0.000000
+[2026-03-30 20:27:55] [INFO   ] [AUDIT] Return recorded - username=Duke;book_id=1;fee=0.000000
+[2026-03-30 20:27:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:27:59] [ERROR  ] [BookManager::incrementAvailableCopies] Check constraint 'chk_copies' is violated.
+[2026-03-30 20:27:59] [INFO   ] RETURN (GUI): user=Duke book_id=1 overdue_days=0 fee=0.000000
+[2026-03-30 20:27:59] [INFO   ] [AUDIT] Return recorded - username=Duke;book_id=1;fee=0.000000
+[2026-03-30 20:28:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:01] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:28:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:06] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:28:43] [INFO   ] Audit thread stopped.
+[2026-03-30 20:28:44] [INFO   ] === OPAC System stopped ===
+[2026-03-30 20:53:08] [INFO   ] === OPAC System starting ===
+[2026-03-30 20:53:08] [INFO   ] Audit thread started.
+[2026-03-30 20:53:18] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:18] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:53:18] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:18] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:18] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:18] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:22] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:53:22] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:54:09] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:54:20] [INFO   ] Audit thread stopped.
+[2026-03-30 20:54:20] [INFO   ] === OPAC System stopped ===
+[2026-03-30 20:57:14] [INFO   ] === OPAC System starting ===
+[2026-03-30 20:57:14] [INFO   ] Audit thread started.
+[2026-03-30 20:57:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:21] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:57:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:23] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:25] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:25] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:26] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:41] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 20:57:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:41] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:51] [INFO   ] BORROW (GUI): user=Duke book_id=4
+[2026-03-30 20:57:51] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=4
+[2026-03-30 20:57:53] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:53] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:53] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:57:53] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:00] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:08] [INFO   ] BORROW (GUI): user=Duke book_id=4
+[2026-03-30 20:58:08] [INFO   ] [AUDIT] Borrow recorded - username=Duke;book_id=4
+[2026-03-30 20:58:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:10] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:15] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 20:58:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:58:21] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 20:59:16] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:00:16] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:01:17] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:02:18] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:03:18] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:04:19] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:04:55] [INFO   ] Audit thread stopped.
+[2026-03-30 21:04:55] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:05:57] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:05:57] [INFO   ] Audit thread started.
+[2026-03-30 21:08:00] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:08:00] [INFO   ] Audit thread started.
+[2026-03-30 21:08:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:08:07] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:08:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:08:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:08:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:08:07] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:08:15] [INFO   ] Audit thread stopped.
+[2026-03-30 21:08:15] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:09:42] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:09:42] [INFO   ] Audit thread started.
+[2026-03-30 21:10:36] [INFO   ] Audit thread stopped.
+[2026-03-30 21:10:36] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:11:01] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:11:01] [INFO   ] Audit thread started.
+[2026-03-30 21:11:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:35] [WARNING] LOGIN FAIL - user: admin
+[2026-03-30 21:11:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:36] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:11:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:11:39] [INFO   ] Audit thread stopped.
+[2026-03-30 21:11:39] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:14:06] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:14:06] [INFO   ] Audit thread started.
+[2026-03-30 21:14:24] [INFO   ] Audit thread stopped.
+[2026-03-30 21:14:24] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:18:31] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:18:31] [INFO   ] Audit thread started.
+[2026-03-30 21:18:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:18:42] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:18:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:18:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:18:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:18:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:19:12] [INFO   ] Audit thread stopped.
+[2026-03-30 21:19:12] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:20:39] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:20:39] [INFO   ] Audit thread started.
+[2026-03-30 21:20:47] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:20:47] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:20:47] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:20:47] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:20:47] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:20:47] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:20:55] [INFO   ] Audit thread stopped.
+[2026-03-30 21:20:55] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:21:46] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:21:46] [INFO   ] Audit thread started.
+[2026-03-30 21:21:52] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:21:52] [WARNING] LOGIN FAIL - user: admin`
+[2026-03-30 21:21:55] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:21:55] [WARNING] LOGIN FAIL - user: admin`
+[2026-03-30 21:21:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:21:57] [WARNING] LOGIN FAIL - user: admin`
+[2026-03-30 21:22:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:03] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:22:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:03] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:09] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:31] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:22:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:31] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:22:39] [INFO   ] Audit thread stopped.
+[2026-03-30 21:22:39] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:25:32] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:25:32] [INFO   ] Audit thread started.
+[2026-03-30 21:25:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:48] [INFO   ] LOGIN OK - user: Duke  role: user
+[2026-03-30 21:25:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:48] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:59] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:25:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:25:59] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:26:04] [INFO   ] Audit thread stopped.
+[2026-03-30 21:26:04] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:55:40] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:55:40] [INFO   ] Audit thread started.
+[2026-03-30 21:55:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:45] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:55:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:57] [INFO   ] BOOK ADDED (GUI): q
+[2026-03-30 21:55:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:55:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:08] [INFO   ] Audit thread stopped.
+[2026-03-30 21:56:08] [INFO   ] === OPAC System stopped ===
+[2026-03-30 21:56:39] [INFO   ] === OPAC System starting ===
+[2026-03-30 21:56:39] [INFO   ] Audit thread started.
+[2026-03-30 21:56:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:44] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:56:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:49] [INFO   ] BOOK DELETED (GUI): id=24
+[2026-03-30 21:56:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:51] [INFO   ] BOOK DELETED (GUI): id=25
+[2026-03-30 21:56:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:56:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:33] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:33] [INFO   ] LOGIN OK - user: duke  role: user
+[2026-03-30 21:57:33] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:33] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:33] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:33] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:40] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:57:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:42] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:44] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:44] [ERROR  ] [BookManager::incrementAvailableCopies] Check constraint 'chk_copies' is violated.
+[2026-03-30 21:57:44] [INFO   ] RETURN (GUI): user=duke book_id=2 overdue_days=0 fee=0.000000
+[2026-03-30 21:57:44] [INFO   ] [AUDIT] Return recorded - username=duke;book_id=2;fee=0.000000
+[2026-03-30 21:57:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:45] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:49] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:57:57] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:01] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:08] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 21:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:08] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:19] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:19] [INFO   ] LOGIN OK - user: duke  role: user
+[2026-03-30 21:58:19] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:19] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:19] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:19] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:23] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:23] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:35] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:36] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:36] [INFO   ] BORROW (GUI): user=duke book_id=2
+[2026-03-30 21:58:36] [INFO   ] [AUDIT] Borrow recorded - username=duke;book_id=2
+[2026-03-30 21:58:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:37] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:39] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:40] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 21:58:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:50] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:50] [INFO   ] RETURN (GUI): user=duke book_id=2 overdue_days=11 fee=220.000000
+[2026-03-30 21:58:50] [INFO   ] [AUDIT] Return recorded - username=duke;book_id=2;fee=220.000000
+[2026-03-30 21:58:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:51] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:58:54] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 21:59:41] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 22:00:38] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:38] [WARNING] LOGIN FAIL - user: admin
+[2026-03-30 22:00:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:40] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 22:00:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:40] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:00:41] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 22:00:49] [INFO   ] Audit thread stopped.
+[2026-03-30 22:00:50] [INFO   ] === OPAC System stopped ===
+[2026-03-30 22:07:36] [INFO   ] === OPAC System starting ===
+[2026-03-30 22:07:36] [INFO   ] Audit thread started.
+[2026-03-30 22:08:37] [INFO   ] [AUDIT] Heartbeat - system is running.
+[2026-03-30 22:09:33] [INFO   ] Audit thread stopped.
+[2026-03-30 22:09:33] [INFO   ] === OPAC System stopped ===
+[2026-03-30 22:20:48] [INFO   ] === OPAC System starting ===
+[2026-03-30 22:20:48] [INFO   ] Audit thread started.
+[2026-03-30 22:20:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:20:56] [INFO   ] LOGIN OK - user: admin  role: admin
+[2026-03-30 22:20:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:20:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:20:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:20:56] [INFO   ] Connected to MySQL - schema: opac_db
+[2026-03-30 22:21:28] [INFO   ] Audit thread stopped.
+[2026-03-30 22:21:28] [INFO   ] === OPAC System stopped ===

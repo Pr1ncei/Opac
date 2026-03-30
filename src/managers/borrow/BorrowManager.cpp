@@ -1,61 +1,61 @@
-﻿#include "BorrowManager.h"
+﻿// ============================================================================
+//  BorrowManager_gui.cpp
+//  GUI wrapper methods — no std::cin / std::cout.
+//  Compile this alongside your existing BorrowManager.cpp.
+// ============================================================================
+
+#include "../borrow/BorrowManager.h"
 #include "../../utils/Logger.h"
 #include "../../utils/EventBus.h"
-#include <iostream>
-#include <iomanip>
-#include <stdexcept>
 #include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
+#include <ctime>
+#include <stdexcept>
 
-// ============================================================================
-//  borrowBook
-// ============================================================================
-void BorrowManager::borrowBook(const std::string& username)
+// ─── BorrowRow::isOverdue ────────────────────────────────────────────────────
+
+bool BorrowRow::isOverdue() const
 {
-    std::string input;
-    std::cout << "\n========== BORROW BOOK ==========\n";
-    std::cout << "Enter Book ID (0 cancel): ";
-    std::cin >> input;
-    if (input == "0") { std::cout << "Cancelled.\n"; return; }
+    if (!returnDate.empty())
+        return overdueDays > 0;
 
-    int bookId;
-    try { bookId = std::stoi(input); }
-    catch (...) { std::cout << "Invalid ID.\n"; return; }
+    // Not yet returned — compare dueDate against today
+    std::time_t now = std::time(nullptr);
+    std::tm* tmNow = std::localtime(&now);
+    char buf[11];
+    std::strftime(buf, sizeof(buf), "%Y-%m-%d", tmNow);
+    return dueDate < std::string(buf);
+}
 
-    bookMgr_.showBookDetails(bookId);
+// ─── Internal helper ─────────────────────────────────────────────────────────
+// Query must SELECT: borrow_id, book_id, title (from JOIN), username,
+//                    borrow_date, due_date, return_date, overdue_days, fee
 
-    Book book;
-    try { book = bookMgr_.getBookById(bookId); }
-    catch (std::exception& e)
-    {
-        std::cout << e.what() << "\n";
-        return;
-    }
+static BorrowRow rowFromResult(sql::ResultSet* res)
+{
+    BorrowRow r;
+    r.borrowId = res->getInt("borrow_id");
+    r.bookId = res->getInt("book_id");
+    r.bookTitle = res->getString("title");
+    r.username = res->getString("username");
+    r.borrowDate = res->getString("borrow_date");
+    r.dueDate = res->getString("due_date");
+    r.returnDate = res->isNull("return_date") ? "" : res->getString("return_date");
+    r.overdueDays = res->isNull("overdue_days") ? 0 : res->getInt("overdue_days");
+    r.fee = res->isNull("fee") ? 0.0 : res->getDouble("fee");
+    return r;
+}
 
-    if (!book.isAvailable())
-    {
-        std::cout << "Sorry, all copies of this book are currently borrowed.\n";
-        return;
-    }
+// ─── borrowBookGui ───────────────────────────────────────────────────────────
 
-    std::cout << "\n--- Borrow Terms ---\n";
-    std::cout << "Borrow period : " << FeeCalculator::BORROW_PERIOD_DAYS
-        << " days from today\n";
-    std::cout << "Overdue fee   : PHP" << FeeCalculator::FEE_PER_DAY
-        << " per day\n";
-
-    char confirm;
-    std::cout << "Proceed with borrowing? (y/n): ";
-    std::cin >> confirm;
-    if (confirm != 'y' && confirm != 'Y')
-    {
-        std::cout << "Borrow cancelled.\n";
-        return;
-    }
-
+bool BorrowManager::borrowBookGui(int bookId, const std::string& username)
+{
     try
     {
+        Book book = bookMgr_.getBookById(bookId);   // throws if not found
+        if (!book.isAvailable()) return false;
+
         sql::Connection* con = db_.getConnection();
 
         std::unique_ptr<sql::PreparedStatement> pstmt(
@@ -68,54 +68,48 @@ void BorrowManager::borrowBook(const std::string& username)
         pstmt->setInt(3, FeeCalculator::BORROW_PERIOD_DAYS);
         pstmt->execute();
 
+        // Roll back the insert if inventory decrement fails
         if (!bookMgr_.decrementAvailableCopies(bookId))
         {
-            std::cout << "Could not update inventory. Please try again.\n";
-            return;
+            std::unique_ptr<sql::PreparedStatement> del(
+                con->prepareStatement(
+                    "DELETE FROM borrow_records "
+                    "WHERE book_id=? AND username=? AND return_date IS NULL "
+                    "ORDER BY borrow_date DESC LIMIT 1"));
+            del->setInt(1, bookId);
+            del->setString(2, username);
+            del->execute();
+            return false;
         }
 
         Logger::getInstance().info(
-            "BORROW: user=" + username +
+            "BORROW (GUI): user=" + username +
             " book_id=" + std::to_string(bookId));
-
         EventBus::getInstance().publish("BOOK_BORROWED",
             "username=" + username +
             ";book_id=" + std::to_string(bookId));
-
-        std::cout << "\nBook borrowed successfully!\n";
-        std::cout << "Return within " << FeeCalculator::BORROW_PERIOD_DAYS
-            << " days to avoid fees.\n";
+        return true;
     }
     catch (std::exception& e)
     {
         Logger::getInstance().error(
-            std::string("[BorrowManager::borrowBook] ") + e.what());
-        std::cout << "Error: " << e.what() << "\n";
+            std::string("[BorrowManager::borrowBookGui] ") + e.what());
+        return false;
     }
 }
 
-// ============================================================================
-//  returnBook
-// ============================================================================
-void BorrowManager::returnBook(const std::string& username)
+// ─── returnBookGui ───────────────────────────────────────────────────────────
+
+bool BorrowManager::returnBookGui(int bookId,
+    const std::string& username,
+    const std::string& returnDate,
+    bool confirmPayment)
 {
-    std::string input;
-    std::cout << "\n========== RETURN BOOK ==========\n";
-    std::cout << "Enter Book ID to return (0 cancel): ";
-    std::cin >> input;
-    if (input == "0") { std::cout << "Cancelled.\n"; return; }
-
-    int bookId;
-    try { bookId = std::stoi(input); }
-    catch (...) { std::cout << "Invalid ID.\n"; return; }
-
-    bookMgr_.showBookDetails(bookId);
-
     try
     {
         sql::Connection* con = db_.getConnection();
 
-        // Fetch the active borrow record for this user + book.
+        // Find the active borrow record
         std::unique_ptr<sql::PreparedStatement> sel(
             con->prepareStatement(
                 "SELECT borrow_id, due_date "
@@ -125,41 +119,16 @@ void BorrowManager::returnBook(const std::string& username)
         sel->setInt(1, bookId);
         sel->setString(2, username);
         std::unique_ptr<sql::ResultSet> res(sel->executeQuery());
-
-        if (!res->next())
-        {
-            std::cout << "No active borrow record found for this book.\n";
-            return;
-        }
+        if (!res->next()) return false;
 
         int         borrowId = res->getInt("borrow_id");
         std::string dueDate = res->getString("due_date");
 
-        std::string returnDate = FeeCalculator::promptReturnDate(dueDate);
-
         int    days = FeeCalculator::overdueDays(dueDate, returnDate);
         double fee = FeeCalculator::overdueFee(days);
 
-        std::string bookTitle = "Unknown";
-        try { bookTitle = bookMgr_.getBookById(bookId).getTitle(); }
-        catch (...) {}
-
-        FeeCalculator::printFeeReceipt(bookTitle, dueDate, returnDate, days, fee);
-
-        if (fee > 0.0)
-        {
-            char pay;
-            std::cout << "\nPlease pay PHP" << std::fixed
-                << std::setprecision(2) << fee
-                << " to the librarian.\n";
-            std::cout << "Confirm payment received? (y/n): ";
-            std::cin >> pay;
-            if (pay != 'y' && pay != 'Y')
-            {
-                std::cout << "Return on hold until payment is confirmed.\n";
-                return;
-            }
-        }
+        // Caller must confirm payment before we commit when there is a fee
+        if (fee > 0.0 && !confirmPayment) return false;
 
         std::unique_ptr<sql::PreparedStatement> upd(
             con->prepareStatement(
@@ -175,52 +144,66 @@ void BorrowManager::returnBook(const std::string& username)
         bookMgr_.incrementAvailableCopies(bookId);
 
         Logger::getInstance().info(
-            "RETURN: user=" + username +
+            "RETURN (GUI): user=" + username +
             " book_id=" + std::to_string(bookId) +
             " overdue_days=" + std::to_string(days) +
             " fee=" + std::to_string(fee));
-
         EventBus::getInstance().publish("BOOK_RETURNED",
             "username=" + username +
             ";book_id=" + std::to_string(bookId) +
             ";fee=" + std::to_string(fee));
-
-        std::cout << "Book returned successfully. Thank you!\n";
+        return true;
     }
     catch (std::exception& e)
     {
         Logger::getInstance().error(
-            std::string("[BorrowManager::returnBook] ") + e.what());
-        std::cout << "Error: " << e.what() << "\n";
+            std::string("[BorrowManager::returnBookGui] ") + e.what());
+        return false;
     }
 }
 
-// ============================================================================
-//  viewBorrowedBooks
-// ============================================================================
-void BorrowManager::viewBorrowedBooks(const std::string& username)
-{
-    bool isAdmin = username.empty();
+// ─── getActiveBorrow ─────────────────────────────────────────────────────────
 
+BorrowRow BorrowManager::getActiveBorrow(int bookId, const std::string& username)
+{
+    BorrowRow empty{};
+    empty.borrowId = -1;
     try
     {
         sql::Connection* con = db_.getConnection();
-
-        std::unique_ptr<sql::PreparedStatement> pstmt;
-        if (isAdmin)
-        {
-            pstmt.reset(con->prepareStatement(
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            con->prepareStatement(
                 "SELECT br.borrow_id, br.book_id, b.title, br.username, "
                 "       br.borrow_date, br.due_date, br.return_date, "
                 "       br.overdue_days, br.fee "
                 "FROM borrow_records br "
                 "JOIN books b ON br.book_id = b.book_id "
-                "WHERE br.return_date IS NULL "
-                "ORDER BY br.due_date ASC"));
-        }
-        else
-        {
-            pstmt.reset(con->prepareStatement(
+                "WHERE br.book_id=? AND br.username=? AND br.return_date IS NULL "
+                "ORDER BY br.borrow_date DESC LIMIT 1"));
+        pstmt->setInt(1, bookId);
+        pstmt->setString(2, username);
+        std::unique_ptr<sql::ResultSet> res(pstmt->executeQuery());
+        if (res->next()) return rowFromResult(res.get());
+    }
+    catch (std::exception& e)
+    {
+        Logger::getInstance().error(
+            std::string("[BorrowManager::getActiveBorrow] ") + e.what());
+    }
+    return empty;
+}
+
+// ─── getActiveBorrowsForUser ─────────────────────────────────────────────────
+
+std::vector<BorrowRow> BorrowManager::getActiveBorrowsForUser(
+    const std::string& username)
+{
+    std::vector<BorrowRow> rows;
+    try
+    {
+        sql::Connection* con = db_.getConnection();
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            con->prepareStatement(
                 "SELECT br.borrow_id, br.book_id, b.title, br.username, "
                 "       br.borrow_date, br.due_date, br.return_date, "
                 "       br.overdue_days, br.fee "
@@ -228,58 +211,43 @@ void BorrowManager::viewBorrowedBooks(const std::string& username)
                 "JOIN books b ON br.book_id = b.book_id "
                 "WHERE br.username=? AND br.return_date IS NULL "
                 "ORDER BY br.due_date ASC"));
-            pstmt->setString(1, username);
-        }
-
+        pstmt->setString(1, username);
         std::unique_ptr<sql::ResultSet> res(pstmt->executeQuery());
-
-        printBorrowHeader(isAdmin);
-        bool found = false;
-
         while (res->next())
-        {
-            found = true;
-            std::cout << std::left
-                << std::setw(8) << res->getInt("borrow_id")
-                << std::setw(35) << res->getString("title")
-                << std::setw(20) << res->getString("due_date");
-
-            if (isAdmin)
-                std::cout << std::setw(15) << res->getString("username");
-
-            std::string due = res->getString("due_date");
-            std::time_t now = std::time(nullptr);
-            std::tm* tmNow = std::localtime(&now);
-            char buf[20];
-            std::strftime(buf, sizeof(buf), "%Y-%m-%d", tmNow);
-            std::string today(buf);
-
-            std::cout << (due < today ? " OVERDUE" : " On time") << "\n";
-        }
-
-        if (!found)
-            std::cout << "  No active borrow records found.\n";
-
-        std::cout << std::string(80, '=') << "\n";
+            rows.push_back(rowFromResult(res.get()));
     }
     catch (std::exception& e)
     {
         Logger::getInstance().error(
-            std::string("[BorrowManager::viewBorrowedBooks] ") + e.what());
-        std::cout << "Error: " << e.what() << "\n";
+            std::string("[BorrowManager::getActiveBorrowsForUser] ") + e.what());
     }
+    return rows;
 }
 
-// Private helper
-void BorrowManager::printBorrowHeader(bool isAdmin) const
+// ─── getAllActiveBorrows ──────────────────────────────────────────────────────
+
+std::vector<BorrowRow> BorrowManager::getAllActiveBorrows()
 {
-    std::cout << "\n" << std::string(80, '=') << "\n";
-    std::cout << std::left
-        << std::setw(8) << "ID"
-        << std::setw(35) << "Title"
-        << std::setw(20) << "Due Date";
-    if (isAdmin)
-        std::cout << std::setw(15) << "Borrowed By";
-    std::cout << "Status\n";
-    std::cout << std::string(80, '=') << "\n";
+    std::vector<BorrowRow> rows;
+    try
+    {
+        sql::Connection* con = db_.getConnection();
+        std::unique_ptr<sql::Statement> stmt(con->createStatement());
+        std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(
+            "SELECT br.borrow_id, br.book_id, b.title, br.username, "
+            "       br.borrow_date, br.due_date, br.return_date, "
+            "       br.overdue_days, br.fee "
+            "FROM borrow_records br "
+            "JOIN books b ON br.book_id = b.book_id "
+            "WHERE br.return_date IS NULL "
+            "ORDER BY br.due_date ASC"));
+        while (res->next())
+            rows.push_back(rowFromResult(res.get()));
+    }
+    catch (std::exception& e)
+    {
+        Logger::getInstance().error(
+            std::string("[BorrowManager::getAllActiveBorrows] ") + e.what());
+    }
+    return rows;
 }
